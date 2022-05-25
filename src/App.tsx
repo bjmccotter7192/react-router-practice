@@ -1,6 +1,7 @@
-import { BrowserRouter, Route, Link, Routes } from 'react-router-dom';
+import { Route, Link } from 'react-router-dom';
 import AlphaFormApp from './AlphaForm';
 import BetaFormApp from './BetaForm';
+import TestRouter from './testRouter';
 
 const WelcomeApp = () => {
   return (
@@ -15,13 +16,11 @@ const WelcomeApp = () => {
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route index element={<WelcomeApp />} />
-        <Route path='alpha-form/*' element={<AlphaFormApp />} />
-        <Route path='beta-form' element={<BetaFormApp />} />
-      </Routes>
-    </BrowserRouter>
+    <TestRouter>
+      <Route index element={<WelcomeApp />} />
+      <Route path='alpha-form/*' element={<AlphaFormApp />} />
+      <Route path='beta-form/*' element={<BetaFormApp />} />
+    </TestRouter>
   );
 }
 

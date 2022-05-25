@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 
 const PageOne: React.FC = (): JSX.Element => {
   const location = useLocation();
-  console.log(location);
+  const previousPath = location.pathname.split('/').slice(0, -1).join('/');
 
   return (
     <div>
@@ -14,7 +14,7 @@ const PageOne: React.FC = (): JSX.Element => {
         <input type="text" name="name" />
       </label>
       <br/><br/>
-      <Link to='page-two'><button type='button'>Next</button></Link>
+      <Link to={`${previousPath}/page-two`}><button type='button'>Next</button></Link>
     </div>
   );
 };
